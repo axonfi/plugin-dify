@@ -1,0 +1,29 @@
+version: 0.0.1
+type: plugin
+author: axonfi
+name: axonfi
+label:
+  en_US: AxonFi
+  zh_Hans: AxonFi
+description:
+  en_US: Non-custodial treasury and payment infrastructure for autonomous AI agents. Let your agents make gasless payments from secure vaults.
+  zh_Hans: 自主AI代理的非托管资金管理和支付基础设施。
+icon: _assets/icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    network:
+      enabled: true
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2026-03-16T00:00:00Z
+privacy_policy: https://axonfi.xyz/privacy

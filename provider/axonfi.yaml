@@ -1,0 +1,74 @@
+identity:
+  author: axonfi
+  name: axonfi
+  label:
+    en_US: AxonFi
+    zh_Hans: AxonFi
+  description:
+    en_US: Non-custodial treasury and gasless payments for autonomous AI agents. Deploy vaults, register bots, and let them pay — without touching private keys or gas.
+    zh_Hans: 自主AI代理的非托管资金管理和无Gas支付。
+  icon: icon.svg
+  tags:
+    - utilities
+
+credentials_for_provider:
+  relayer_url:
+    type: text-input
+    required: true
+    label:
+      en_US: Relayer URL
+    placeholder:
+      en_US: https://relay.axonfi.xyz
+    help:
+      en_US: The AxonFi relayer endpoint. Default is https://relay.axonfi.xyz
+    default: https://relay.axonfi.xyz
+  bot_private_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Bot Private Key
+    placeholder:
+      en_US: "0x..."
+    help:
+      en_US: The bot's private key for signing EIP-712 payment intents. Generate one in the AxonFi dashboard.
+    url: https://app.axonfi.xyz
+  vault_address:
+    type: text-input
+    required: true
+    label:
+      en_US: Vault Address
+    placeholder:
+      en_US: "0x..."
+    help:
+      en_US: Your AxonFi vault contract address. Deploy one from the dashboard.
+    url: https://app.axonfi.xyz
+  chain_id:
+    type: select
+    required: true
+    label:
+      en_US: Chain
+    options:
+      - value: "8453"
+        label:
+          en_US: Base
+      - value: "42161"
+        label:
+          en_US: Arbitrum One
+      - value: "84532"
+        label:
+          en_US: Base Sepolia (Testnet)
+      - value: "421614"
+        label:
+          en_US: Arbitrum Sepolia (Testnet)
+    default: "8453"
+    help:
+      en_US: The blockchain network your vault is deployed on.
+
+tools:
+  - tools/pay.yaml
+  - tools/get_balance.yaml
+  - tools/get_payment_status.yaml
+
+extra:
+  python:
+    source: axonfi.py

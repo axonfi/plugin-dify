@@ -1,0 +1,53 @@
+identity:
+  name: pay
+  author: axonfi
+  label:
+    en_US: Pay
+    zh_Hans: 支付
+
+description:
+  human:
+    en_US: Send a payment from your AxonFi vault. The bot signs an EIP-712 intent and the relayer executes it on-chain. Gasless for the bot.
+  llm: Send a cryptocurrency payment from an AxonFi vault to a recipient address. Supports USDC and other ERC-20 tokens. The payment is gasless — the relayer pays gas.
+
+parameters:
+  - name: to
+    type: string
+    required: true
+    label:
+      en_US: Recipient Address
+    human_description:
+      en_US: The wallet address to send payment to (0x...)
+    llm_description: The Ethereum address of the payment recipient (0x format)
+    form: llm
+  - name: amount
+    type: string
+    required: true
+    label:
+      en_US: Amount
+    human_description:
+      en_US: The payment amount in human-readable units (e.g. "10.50" for 10.50 USDC)
+    llm_description: The payment amount in human-readable units like "10.50" for 10.50 USDC
+    form: llm
+  - name: token
+    type: string
+    required: false
+    label:
+      en_US: Token Address
+    human_description:
+      en_US: Token contract address. Defaults to USDC if not specified.
+    llm_description: The ERC-20 token contract address to pay with. Leave empty for USDC (default).
+    form: llm
+  - name: memo
+    type: string
+    required: false
+    label:
+      en_US: Memo
+    human_description:
+      en_US: Optional memo or reference for the payment
+    llm_description: An optional memo or reference note to attach to the payment
+    form: llm
+
+extra:
+  python:
+    source: tools/pay.py

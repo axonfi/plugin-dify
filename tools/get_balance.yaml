@@ -1,0 +1,17 @@
+identity:
+  name: get_balance
+  author: axonfi
+  label:
+    en_US: Get Balance
+    zh_Hans: 查询余额
+
+description:
+  human:
+    en_US: Check the USDC balance of your AxonFi vault.
+  llm: Get the current USDC balance of the configured AxonFi vault. Returns the balance in human-readable units.
+
+parameters: []
+
+extra:
+  python:
+    source: tools/get_balance.py
