@@ -1,0 +1,17 @@
+identity:
+  name: get_vault_value
+  author: axonfi
+  label:
+    en_US: Get Vault Value
+    zh_Hans: 查询金库价值
+
+description:
+  human:
+    en_US: Get the total USD value of your vault across all tokens and native ETH.
+  llm: Get the total USD value of the AxonFi vault, summing all token balances priced via Chainlink oracles. Returns total value and per-token breakdown with prices.
+
+parameters: []
+
+extra:
+  python:
+    source: tools/get_vault_value.py
