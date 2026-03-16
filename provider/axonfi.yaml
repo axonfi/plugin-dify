@@ -66,8 +66,12 @@ credentials_for_provider:
 
 tools:
   - tools/pay.yaml
+  - tools/swap.yaml
+  - tools/execute_protocol.yaml
   - tools/get_balance.yaml
   - tools/get_payment_status.yaml
+  - tools/get_swap_status.yaml
+  - tools/get_execute_status.yaml
 
 extra:
   python:

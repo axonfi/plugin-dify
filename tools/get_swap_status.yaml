@@ -1,0 +1,26 @@
+identity:
+  name: get_swap_status
+  author: axonfi
+  label:
+    en_US: Get Swap Status
+    zh_Hans: 查询兑换状态
+
+description:
+  human:
+    en_US: Check the status of a previously submitted swap.
+  llm: Check the status of an AxonFi swap by its request ID. Returns status and transaction hash if available.
+
+parameters:
+  - name: request_id
+    type: string
+    required: true
+    label:
+      en_US: Request ID
+    human_description:
+      en_US: The request ID returned when the swap was submitted
+    llm_description: The request ID returned from the swap tool
+    form: llm
+
+extra:
+  python:
+    source: tools/get_swap_status.py

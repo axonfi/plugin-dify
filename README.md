@@ -4,9 +4,13 @@ Non-custodial treasury and gasless payments for autonomous AI agents.
 
 ## Tools
 
-- **Pay** — Send payments from your vault. The bot signs an EIP-712 intent, the relayer executes on-chain. Zero gas management.
+- **Pay** — Send payments from your vault. EIP-712 signed, gasless.
+- **Swap** — Rebalance tokens within your vault (e.g. USDC → WETH).
+- **Execute Protocol** — Interact with DeFi protocols (Uniswap, Aave, etc.) through your vault.
 - **Get Balance** — Check your vault's USDC balance.
 - **Get Payment Status** — Poll the status of a submitted payment.
+- **Get Swap Status** — Poll the status of a submitted swap.
+- **Get Execute Status** — Poll the status of a protocol execution.
 
 ## Setup
 

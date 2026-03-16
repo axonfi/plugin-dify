@@ -1,0 +1,26 @@
+identity:
+  name: get_execute_status
+  author: axonfi
+  label:
+    en_US: Get Execute Status
+    zh_Hans: 查询执行状态
+
+description:
+  human:
+    en_US: Check the status of a previously submitted protocol execution.
+  llm: Check the status of an AxonFi protocol execution by its request ID. Returns status and transaction hash if available.
+
+parameters:
+  - name: request_id
+    type: string
+    required: true
+    label:
+      en_US: Request ID
+    human_description:
+      en_US: The request ID returned when the execution was submitted
+    llm_description: The request ID returned from the execute_protocol tool
+    form: llm
+
+extra:
+  python:
+    source: tools/get_execute_status.py

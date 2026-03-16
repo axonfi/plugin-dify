@@ -8,7 +8,7 @@ label:
 description:
   en_US: Non-custodial treasury and payment infrastructure for autonomous AI agents. Let your agents make gasless payments from secure vaults.
   zh_Hans: 自主AI代理的非托管资金管理和支付基础设施。
-icon: _assets/icon.svg
+icon: icon.svg
 resource:
   memory: 268435456
   permission:

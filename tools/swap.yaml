@@ -1,0 +1,53 @@
+identity:
+  name: swap
+  author: axonfi
+  label:
+    en_US: Swap (Rebalance)
+    zh_Hans: 兑换
+
+description:
+  human:
+    en_US: Rebalance tokens within your vault. Swap one token for another without sending funds externally. Restricted by the vault's rebalance token whitelist.
+  llm: Swap tokens within the AxonFi vault for rebalancing. The output tokens stay in the vault. Use this to convert between tokens (e.g. USDC to WETH) without making an external payment.
+
+parameters:
+  - name: from_token
+    type: string
+    required: true
+    label:
+      en_US: From Token
+    human_description:
+      en_US: Token address to swap from (e.g. USDC address)
+    llm_description: The ERC-20 token contract address to swap from
+    form: llm
+  - name: to_token
+    type: string
+    required: true
+    label:
+      en_US: To Token
+    human_description:
+      en_US: Token address to swap to (e.g. WETH address)
+    llm_description: The ERC-20 token contract address to receive after the swap
+    form: llm
+  - name: amount
+    type: string
+    required: true
+    label:
+      en_US: Amount
+    human_description:
+      en_US: Amount to swap in human-readable units (e.g. "10.00" for 10 USDC)
+    llm_description: The amount of the from-token to swap, in human-readable units
+    form: llm
+  - name: memo
+    type: string
+    required: false
+    label:
+      en_US: Memo
+    human_description:
+      en_US: Optional memo for this swap
+    llm_description: An optional memo or reference note for the swap
+    form: llm
+
+extra:
+  python:
+    source: tools/swap.py

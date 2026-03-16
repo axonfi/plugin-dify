@@ -1,0 +1,71 @@
+identity:
+  name: execute_protocol
+  author: axonfi
+  label:
+    en_US: Execute Protocol
+    zh_Hans: 执行协议
+
+description:
+  human:
+    en_US: Interact with a DeFi protocol (Uniswap, Aave, etc.) through your vault. The vault auto-approves tokens, calls the protocol, then revokes approval.
+  llm: Execute a DeFi protocol interaction through the AxonFi vault. This calls an arbitrary smart contract function using the approve-call-revoke pattern. Use this for Uniswap swaps, Aave deposits, lending, staking, or any on-chain protocol interaction.
+
+parameters:
+  - name: protocol
+    type: string
+    required: true
+    label:
+      en_US: Protocol Address
+    human_description:
+      en_US: The smart contract address to call (e.g. Uniswap router)
+    llm_description: The Ethereum address of the protocol/contract to interact with
+    form: llm
+  - name: calldata
+    type: string
+    required: true
+    label:
+      en_US: Calldata
+    human_description:
+      en_US: The encoded function call data (hex, 0x-prefixed)
+    llm_description: The ABI-encoded calldata for the protocol function call, as a hex string starting with 0x
+    form: llm
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token Address
+    human_description:
+      en_US: Token to approve for the protocol call
+    llm_description: The ERC-20 token address that needs to be approved for this protocol interaction
+    form: llm
+  - name: amount
+    type: string
+    required: true
+    label:
+      en_US: Amount
+    human_description:
+      en_US: Amount to approve in raw units (smallest denomination)
+    llm_description: The token amount to approve for the protocol, in raw units (e.g. "10000000" for 10 USDC)
+    form: llm
+  - name: value
+    type: string
+    required: false
+    label:
+      en_US: ETH Value
+    human_description:
+      en_US: Native ETH value to send with the call (in wei). Usually 0.
+    llm_description: Native ETH value in wei to send with the protocol call. Usually "0" unless the protocol requires ETH (e.g. WETH deposit).
+    form: llm
+  - name: memo
+    type: string
+    required: false
+    label:
+      en_US: Memo
+    human_description:
+      en_US: Optional memo for this execution
+    llm_description: An optional memo or reference note
+    form: llm
+
+extra:
+  python:
+    source: tools/execute_protocol.py
