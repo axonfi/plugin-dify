@@ -6,7 +6,6 @@ import uuid
 
 import requests
 from eth_account import Account
-from eth_account.messages import encode_structured_data
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
@@ -94,17 +93,22 @@ class PayTool(Tool):
             "message": message,
         }
 
-        signed = bot_account.sign_message(encode_structured_data(typed_data))
+        signed = Account.sign_typed_data(
+            bot_account.key,
+            domain_data=typed_data["domain"],
+            message_types={"PaymentIntent": typed_data["types"]["PaymentIntent"]},
+            message_data=typed_data["message"],
+        )
 
         # Submit to relayer
         payload = {
             "bot": bot_account.address,
             "to": to,
             "token": token,
-            "amount": amount_raw,
-            "deadline": deadline,
+            "amount": str(amount_raw),
+            "deadline": str(deadline),
             "ref": ref,
-            "signature": signed.signature.hex(),
+            "signature": "0x" + signed.signature.hex(),
             "chainId": chain_id,
             "vaultAddress": vault_address,
             "idempotencyKey": uuid.uuid4().hex,
