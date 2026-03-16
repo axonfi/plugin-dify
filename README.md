@@ -1,6 +1,6 @@
 # AxonFi Plugin for Dify
 
-The treasury layer for autonomous AI agents. Deploy a single non-custodial vault, register your entire bot fleet, and let them pay, swap, and interact with DeFi — without ever touching private keys or gas.
+The treasury layer for autonomous AI agents. Deploy a single non-custodial vault, register your entire bot fleet, and let them pay, swap, and interact with DeFi — without ever holding funds or paying gas.
 
 ## Why AxonFi
 

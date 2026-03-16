@@ -5,7 +5,7 @@ identity:
     en_US: AxonFi
     zh_Hans: AxonFi
   description:
-    en_US: Non-custodial treasury and gasless payments for autonomous AI agents. Deploy vaults, register bots, and let them pay — without touching private keys or gas.
+    en_US: Non-custodial treasury and gasless payments for autonomous AI agents. Deploy vaults, register bots, and let them pay — without holding funds or paying gas.
     zh_Hans: 自主AI代理的非托管资金管理和无Gas支付。
   icon: icon.svg
   tags:
