@@ -11,8 +11,9 @@ Non-custodial treasury and gasless payments for autonomous AI agents.
 ## Setup
 
 1. Deploy a vault at [app.axonfi.xyz](https://app.axonfi.xyz)
-2. Register a bot and get its private key
-3. Configure the plugin with your relayer URL, bot key, vault address, and chain
+2. Deposit USDC (or any ERC-20) to your vault
+3. Register a bot and get its private key
+4. Configure the plugin with your relayer URL, bot key, vault address, and chain
 
 ## Links
 
