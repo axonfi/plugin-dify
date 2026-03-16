@@ -19,7 +19,7 @@ The treasury layer for autonomous AI agents. Deploy a single non-custodial vault
 | **Pay** | Send payments from your vault. Supports any ERC-20 with automatic swap routing. Gasless. |
 | **Swap** | Rebalance tokens within the vault (e.g. USDC to WETH). Funds stay in the vault. |
 | **Execute Protocol** | Call any DeFi protocol (Uniswap, Aave, Lido, etc.) through the vault with approve-call-revoke. |
-| **Get Balance** | Check your vault's USDC balance. |
+| **Get Balance** | Check your vault's token balance (any ERC-20, defaults to USDC). |
 | **Get Payment Status** | Poll the status of a submitted payment by request ID. |
 | **Get Swap Status** | Poll the status of a submitted swap by request ID. |
 | **Get Execute Status** | Poll the status of a protocol execution by request ID. |

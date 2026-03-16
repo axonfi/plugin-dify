@@ -7,10 +7,28 @@ identity:
 
 description:
   human:
-    en_US: Check the USDC balance of your AxonFi vault.
-  llm: Get the current USDC balance of the configured AxonFi vault. Returns the balance in human-readable units.
+    en_US: Check the token balance of your AxonFi vault. Defaults to USDC if no token specified.
+  llm: Get the current token balance of the configured AxonFi vault. Defaults to USDC if no token address is provided. Returns the balance in human-readable units.
 
-parameters: []
+parameters:
+  - name: token
+    type: string
+    required: false
+    label:
+      en_US: Token Address
+    human_description:
+      en_US: Token contract address to check. Defaults to USDC.
+    llm_description: The ERC-20 token contract address to check the balance of. Leave empty for USDC (default).
+    form: llm
+  - name: decimals
+    type: number
+    required: false
+    label:
+      en_US: Token Decimals
+    human_description:
+      en_US: Number of decimals for the token (default 6 for USDC, use 18 for WETH/ETH)
+    llm_description: The number of decimals for the token. Default is 6 (USDC). Use 18 for WETH, ETH, and most ERC-20 tokens.
+    form: llm
 
 extra:
   python:
